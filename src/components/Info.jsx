@@ -2,7 +2,7 @@ import React from "react";
 import { GoSun } from "react-icons/go";
 import { FiMoon } from "react-icons/fi";
 
-const Temp = ({ theme, setTheme, setCity, stats }) => {
+const Info = ({ theme, setTheme, setCity, stats }) => {
 
 
   return (
@@ -46,4 +46,4 @@ const Temp = ({ theme, setTheme, setCity, stats }) => {
   );
 };
 
-export default Temp;
+export default Info;

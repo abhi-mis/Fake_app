@@ -7,7 +7,7 @@ import { GiWindSlap } from "react-icons/gi";
 const HighlightCard = ({ theme, title, value, unit, icon: Icon }) => (
   <div
     className={`${
-      theme === "dark" ? "bg-black-800 text-white" : "bg-red-200 text-gray-900"
+      theme === "dark" ? "bg-gray-800 text-white" : "bg-red-200 text-gray-900"
     } p-6 rounded-lg shadow-md flex flex-col items-center transition-transform transform hover:scale-105 duration-300`}
   >
     <h1 className="text-md mt-2">{title}</h1>

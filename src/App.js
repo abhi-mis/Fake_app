@@ -6,8 +6,8 @@ import { MdNightlight } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 
 function App() {
-  const [theme, setTheme] = useState('dark');
-  const [city, setCity] = useState('Jaipur');
+  const [theme, setTheme] = useState('light');
+  const [city, setCity] = useState('Kolkata');
   const [weatherData, setWeatherData] = useState(null);
   const [searchCity, setSearchCity] = useState('');
   const [suggestions, setSuggestions] = useState([]);
@@ -115,22 +115,6 @@ function App() {
 
         {weatherData && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            <div className="flex flex-col gap-4 md:w 2">
-              <h2 className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} text-xl font-semibold mb-4`}></h2>
-              <Info
-                theme={theme}
-                setTheme={setTheme}
-                setCity={setCity}
-                stats={{
-                  temp: weatherData?.current.temp_c,
-                  condition: weatherData?.current.condition.text,
-                  isDay: weatherData?.current.is_day,
-                  location: weatherData?.location.name,
-                  time: weatherData?.location.localtime,
-                }}
-              />
-            </div>
             <div className="flex flex-col gap-4 md:w 2">
               <h2 className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} text-xl font-semibold`}></h2>
               <Weather
@@ -145,6 +129,21 @@ function App() {
                   visibilityUnit: 'km',
                   airPressure: weatherData?.current.pressure_mb,
                   airPressureUnit: 'mb',
+                }}
+              />
+            </div>
+            <div className="flex flex-col gap-4 md:w 2">
+              <h2 className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} text-xl font-semibold mb-4`}></h2>
+              <Info
+                theme={theme}
+                setTheme={setTheme}
+                setCity={setCity}
+                stats={{
+                  temp: weatherData?.current.temp_c,
+                  condition: weatherData?.current.condition.text,
+                  isDay: weatherData?.current.is_day,
+                  location: weatherData?.location.name,
+                  time: weatherData?.location.localtime,
                 }}
               />
             </div>
